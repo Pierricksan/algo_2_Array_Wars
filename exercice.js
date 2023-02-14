@@ -53,3 +53,18 @@ function triage(putYourArray) {
 let ReturnOfTheArray = triage(newHope);
 console.table(ReturnOfTheArray)
 
+
+// correction 
+let tab1 = [];
+let tab2 = [];
+
+randomizeTab(tab1, 20, 100);
+randomizeTab(tab2, 20, 100);
+let tab3 = tab1.concat(tab2);
+
+sortTab(tab3);
+console.log(tab3)
+let median = (tab3[20] + tab3[21]) /2;
+console.log(median)
+function randomizeTab(tab, taille, max){    for (let i=0; i<taille; i++) {        tab.push(Math.floor(Math.random()*max)+1)    }}function sortTab(tab) {    let matchCount = 0;    for (let i=0; i<tab.length;i++) {        if (tab[i] > tab[i+1]) {            let temp = tab[i];            tab[i] = tab[i+1];            tab[i+1] = temp;        } else {            matchCount++        }    }    let stop = tab.length -1;    if (matchCount !== stop) {        sortTab(tab)    }}
+
