@@ -27,5 +27,29 @@ let array2 = pushArray(darkSide, newHope)
 
 console.log(`Tableau avant triage ${newHope}`);
 
+function triage(putYourArray) {
+  //nombre des éléments dans le tableau
+  let len = putYourArray.length;       
+  let tmp, i, j;                  
+  
+  // analyse du duo 
+  for(i = 1; i < len; i++) {
+      // i sera la valeur +1 à droite de la valeur analysée en cours
+    //stocker la valeur actuelle 
+    tmp = putYourArray[i] // la valeur de l'index
+    j = i - 1 // j est la valeur qui sera analysée en cours
+    while (j >= 0 && putYourArray[j] > tmp) {
+      // déplacer le nombre
+      putYourArray[j+1] = putYourArray[j]
+      j--
+    }
+    //Insère la valeur temporaire à la position 
+    //correcte dans la partie triée.
+    putYourArray[j+1] = tmp
+  }
+  return putYourArray
+}
 
+let ReturnOfTheArray = triage(newHope);
+console.table(ReturnOfTheArray)
 
