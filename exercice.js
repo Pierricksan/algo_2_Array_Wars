@@ -15,19 +15,17 @@ let darkSide = [12, 16, 19, 90, 56];
 // création d'un tableau à trier
 let newHope = [];
 
-lightSideLength = lightSide.length
-darkSideLength = darkSide.length
-
-for (i = 0 ; i < lightSideLength ; i++) {
-    newHope.push(lightSide[i]);
+function pushArray(fromArray, toArray) {
+    for(i = 0 ; i < fromArray.length ; i++) {
+        toArray.push(fromArray[i])
+    }
+    return toArray
 }
 
-for (i = 0 ; i < darkSideLength ; i++) {
-    newHope.push(darkSide[i]);
-}
+let array1 = pushArray(lightSide, newHope);
+let array2 = pushArray(darkSide, newHope)
 
-console.table(newHope);
-
+console.log(`Tableau avant triage ${newHope}`);
 
 
 
